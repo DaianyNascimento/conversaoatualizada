@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Conversão atualizada</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+  <!-- multistep form -->
+<form id="msform">
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active">Passo 1</li>
+    <li>Passo 2</li>
+  </ul>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">Converta uma coordenada geográfica</h2>
+    <h3 class="fs-subtitle">Informe a longitude e a latitude</h3>
+    
+      <div id="col-longitude">
+        <h3 class="fs-subtitle">LONGITUDE: </h3>
+        <p><input class="longgraus" type="number" step="0.01" name="graus" placeholder="º" /> </p>
+        <p><input class="longmin" type="number" step="0.01" name="min" placeholder="''" /> </p>
+        <p><input class="longs" type="number" step="0.01" name="s" placeholder="'" /> </p>
+      </div>
+
+      <div id="col-latitude">
+        <h3 class="fs-subtitle">LATITUDE: </h3>
+        <p><input class="latgraus" type="number" step="0.01" name="graus" placeholder="º" /> </p>
+        <p><input class="latmin" type="number" step="0.01" name="min" placeholder="''" /> </p>
+        <p><input class="lats" type="number" step="0.01" name="s" placeholder="'" /> </p>
+      </div>
+      
+    <input type="button" name="converter" class="converter action-button" value="Converter" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">Conversão realizada</h2>
+    <h3 class="fs-subtitle">Clique no botão "Copiar"</h3>
+
+    <div id="col-resultado">
+      <p><input class="coordlong" type="text" readonly="readonly" name="coordlong" placeholder="UTM longitude" /> </p>
+      <p><input class="coordlat" type="text" readonly="readonly" name="coordlat" placeholder="UTM latitude" /> </p>
+    </div>
+
+    <textarea id="txtarea" readonly="readonly" class="createpoint" name="createpoint" placeholder="Creat point from xy"></textarea>
+    
+    <input type="button" name="copiar" class="copiar action-button" value="Copiar" data-clipboard-action="copy" data-clipboard-target="#txtarea" />
+    <input type="button" name="voltar" class="voltar action-button" value="Voltar" />
+
+  </fieldset>
+</form>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+<script src="js/index.js"></script>
+<script src="js/clipboard.min.js"></script>
+
+</body>
+</html>
